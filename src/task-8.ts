@@ -6,9 +6,9 @@ interface Post {
     body: string;
 }
 
-async function fetchPosts() {
+async function fetchPosts() :Promise<Post[]> {
   const response = await axios.get<Post[]>(
-    '<https://jsonplaceholder.typicode.com/posts>'
+    'https://jsonplaceholder.typicode.com/posts'
   );
   return response.data;
 }
